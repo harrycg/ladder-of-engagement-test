@@ -11,7 +11,7 @@ params={
   
 }
 
-  response = client.call(:people_tags, :people , params)
+  response = client.call(:people_tags, :index)
 
 
 paginated = NationBuilder::Paginator.new(client, response)
