@@ -14,7 +14,7 @@ params = {
   
 }
 
-  client.call(:people, :tag_person , params, id: 15)
+  client.call(:people, :tag_person , params)
 
   puts "HELLO"
 
