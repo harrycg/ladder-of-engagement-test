@@ -19,7 +19,7 @@ people.each do |person|
   id = person['id']
 tag=person['tags']
   
-    puts "#{email} #{first_name} #{last_name} #{id}"
+    puts "#{email} #{first_name} #{last_name} #{id} #{tag}"
 
 
   
