@@ -6,7 +6,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 params = {
 person:{
 id: 15
-  }
+  },
 
   tagging: {
     tag: "is: community 2018"
