@@ -4,13 +4,6 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
   puts "Loading donations..."
 
-params={
-  tagging: {
-    tag: "is: community 2018"
-  }
-  
-}
-
   response = client.call(:people_tags, :index)
 
 
@@ -20,5 +13,4 @@ page2 = page1.next
 page3 = page2.next
 
 
-  puts "HELLO"
 
