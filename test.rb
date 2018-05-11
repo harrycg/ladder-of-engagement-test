@@ -15,19 +15,11 @@ people.each do |person|
     email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
+  id = person['id']
 
   
-    puts "#{email} #{first_name} #{last_name}"
+    puts "#{email} #{first_name} #{last_name} #{id}"
 
 
-params = {
-id: 15,
-  tagging: {
-    tag: "is: community 2018"
-  }
-  
-}
-
-  client.call(:people, :tag_removal , params)
   
 end
