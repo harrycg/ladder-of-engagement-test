@@ -3,32 +3,34 @@ require 'nationbuilder'
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
   puts "Loading donations..."
-response = client.call(:people, :index)
+response = client.call(:people, :index, limit)
 
 
 paginated = NationBuilder::Paginator.new(client, response)
 
  people = paginated.body["results"]
 
+
+
 people.each do |person|
     email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
   id = person['id']
-
+tag=person['tags']
   
     puts "#{email} #{first_name} #{last_name} #{id}"
 
 
   
-params = {
-id: "#{id}",
-  tagging: {
-    tag: "is: community 2018"
-  }
+# params = {
+# id: "#{id}",
+ # tagging: {
+ #   tag: "is: community 2018"
+ # }
   
-}
+#}
 
-  client.call(:people, :bulk_tag_removal , params)
+ # client.call(:people, :bulk_tag_removal , params)
   
 end
