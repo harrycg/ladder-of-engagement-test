@@ -3,13 +3,8 @@ require 'nationbuilder'
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
   puts "Loading donations..."
-  params = {
-  tagging: {
-    tag: "is: community 2018"
-  }
-  }
-  
-  response = client.call(:people, :match , params)
+
+  response = client.call(:people_tags, :people , tag: "is: community 2018")
 
 
 paginated = NationBuilder::Paginator.new(client, response)
