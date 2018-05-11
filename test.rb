@@ -12,7 +12,7 @@ paginated = NationBuilder::Paginator.new(client, response)
 
  
 people.each do |person|
-if person['tags'].include? 'is: awesome core 2018'
+if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
 
   
   email = person['email']
