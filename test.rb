@@ -10,6 +10,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 }
 
 response = client.call(:people_tags, :people, params)
+paginated = NationBuilder::Paginator.new(client, response)
 
  people = paginated.body["results"]
 
