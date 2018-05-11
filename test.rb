@@ -4,5 +4,4 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
   puts "Loading donations..."
 
-  client.raw_call("/people/#14/taggings", "put", {"tagging": {"tag": ["harry_test_cleanup2"]}})
-  
+client.call(:people, :show, id: 14)  
