@@ -9,8 +9,14 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
 paginated = NationBuilder::Paginator.new(client, response)
 
-  puts "Send upsell email to #{name} <#{email}>"
+ people = paginated["results"]
 
+people.each do |person|
+    email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  
+    puts "#{email} #{first_name} #{last_name}"
 
 
 
