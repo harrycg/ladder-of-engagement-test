@@ -15,9 +15,9 @@ people.each do |person|
     email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
- tag=person['tag'] 
+
   
-    puts "#{email} #{first_name} #{last_name} #{tag}"
+    puts "#{email} #{first_name} #{last_name}"
 
 
 params = {
