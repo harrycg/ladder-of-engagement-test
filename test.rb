@@ -20,4 +20,4 @@ people.each do |person|
 
 
 
-
+end
