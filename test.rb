@@ -10,15 +10,7 @@ paginated = NationBuilder::Paginator.new(client, response)
 
  people = paginated.body["results"]
 
-people.each do  |person|
-
-  
-  is_community = person['tags'].include? 'is: community 2018' or 'is: awesome core 2018'
-
-  end
-
-if people
-  
+ 
 people.each do |person|
 if person['tags'].include? 'is: awesome core 2018'
 
@@ -43,6 +35,7 @@ if person['tags'].include? 'is: awesome core 2018'
   client.call(:people, :bulk_tag_removal , params)
 
 else
+  puts "almost there"
 end
 
   
