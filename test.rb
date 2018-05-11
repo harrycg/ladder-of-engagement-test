@@ -3,6 +3,31 @@ require 'nationbuilder'
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
   puts "Loading donations..."
+
+ params = {
+  tagging: {
+    tag: "is: awesome core 2018"
+  }
+  
+}
+
+response = client.call(:people_tags, :people, params)
+
+ people = paginated.body["results"]
+
+ 
+people.each do |person|
+  
+  email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+  
+    puts "#{email} #{first_name} #{last_name} #{id}"
+
+end
+
+=begin
 response = client.call(:people, :index)
 
 
@@ -40,3 +65,4 @@ end
 
   
 end
+=end
