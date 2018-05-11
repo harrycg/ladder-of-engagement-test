@@ -24,9 +24,7 @@ people.each do |person|
   
 params = {
 id: "#{id}",
-  tagging: {
     tag: "is: community 2018"
-  }
   
 }
 
