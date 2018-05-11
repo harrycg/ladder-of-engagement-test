@@ -5,7 +5,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
   puts "Loading donations..."
 params = {
 id: 15,
-  tag_person: {
+  tagging: {
     tag: "is: community 2018"
   }
   
