@@ -4,12 +4,12 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
   puts "Loading donations..."
 
-  response = client.call(:people_tags, :index)
+  response = client.call(:people, :index)
 
 
 paginated = NationBuilder::Paginator.new(client, response)
 
- people = paginated["results"]
+ people = paginated.body["results"]
 
 people.each do |person|
     email = person['email']
