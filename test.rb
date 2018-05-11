@@ -10,14 +10,23 @@ paginated = NationBuilder::Paginator.new(client, response)
 
  people = paginated.body["results"]
 
+people.each do  |person|
 
+  
+  is_community = person['tags'].include? 'is: community 2018' or 'is: awesome core 2018'
 
+  end
+
+if people
+  
 people.each do |person|
-    email = person['email']
+if person['tags'].include? 'is: awesome core 2018'
+
+  
+  email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
   id = person['id']
-tag=person['tags']
   
     puts "#{email} #{first_name} #{last_name} #{id} #{tag}"
 
@@ -32,5 +41,9 @@ tag=person['tags']
 }
 
   client.call(:people, :bulk_tag_removal , params)
+
+else
+end
+
   
 end
