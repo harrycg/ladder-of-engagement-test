@@ -23,14 +23,14 @@ tag=person['tags']
 
 
   
-# params = {
-# id: "#{id}",
- # tagging: {
- #   tag: "is: community 2018"
- # }
+ params = {
+ id: "#{id}",
+  tagging: {
+    tag: "is: awesome core 2018"
+  }
   
-#}
+}
 
- # client.call(:people, :bulk_tag_removal , params)
+  client.call(:people, :bulk_tag_removal , params)
   
 end
