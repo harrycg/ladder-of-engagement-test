@@ -20,7 +20,7 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
     last_name = person['last_name']
   id = person['id']
   
-    puts "#{email} #{first_name} #{last_name} #{id} #{tag}"
+    puts "#{email} #{first_name} #{last_name} #{id}"
 
 
   
