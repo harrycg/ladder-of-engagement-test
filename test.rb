@@ -4,6 +4,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
   puts "Loading donations..."
 
+=begin
  params = {
   tag: "is:%20awesome%20core%202018"
     
@@ -28,8 +29,7 @@ people.each do |person|
     puts "#{email} #{first_name} #{last_name} #{id}"
 
 end
-
-=begin
+=end
 response = client.call(:people, :index)
 
 
@@ -67,4 +67,3 @@ end
 
   
 end
-=end
