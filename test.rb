@@ -21,13 +21,13 @@ end
 donations.each do |d|
   
     email = d['donor']['email']
-  first_name = d['donor']['first_name'].capitalize
-  name = "#{d['donor']['first_name']} #{d['donor']['last_name']}"
+  first_name = d['donor']['first_name']
+ last_name = d['donor']['last_name']
   amount = d['amount']
   person_id = d['donor']['id']
 
   
-    puts "#{email} #{first_name} #{last_name} #{id}"
+    puts "#{first_name} #{last_name} donated #{amount}"
 
 end 
 =begin
