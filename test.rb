@@ -30,7 +30,7 @@ people.each do |person|
 
 end
 =end
-response = client.call(:people, :index)
+response = client.call(:people, :index, limit: 100)
 
 
 paginated = NationBuilder::Paginator.new(client, response)
