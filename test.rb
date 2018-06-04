@@ -1,7 +1,7 @@
 https://slack.com/api/chat.postMessage
 Content-type: application/json
 Authorization: Bearer ENV['SLACK_APIKEY']
-{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."
+{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}
 
   
 =begin
