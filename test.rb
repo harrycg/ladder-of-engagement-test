@@ -50,7 +50,7 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
     puts "#{email} #{first_name} #{last_name} #{id}"
 
 
-  
+  =begin
  params = {
  id: "#{id}",
   tagging: {
@@ -58,7 +58,8 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
   }
   
 }
-
+=end
+  
   params2 = {
  id: "#{id}",
   tagging: {
