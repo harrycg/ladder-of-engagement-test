@@ -18,7 +18,7 @@ while page.next?
 end
 =end
 
-if donations['amount_in_cents'] > "25000"
+if donations['amount_in_cents'] = 25000
   
 donations.each do |d|
   
