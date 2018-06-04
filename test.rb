@@ -18,8 +18,6 @@ while page.next?
 end
 =end
 
-if person['tags'].include? 'is: community 2018'
-
 if donations['amount_in_cents'] > 25000
   
 donations.each do |d|
