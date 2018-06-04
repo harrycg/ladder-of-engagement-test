@@ -2,9 +2,34 @@ require 'nationbuilder'
 
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
+two_days_ago = Date.today - 2
+
   puts "Loading donations..."
 
+response = client.call(:donations, :index, limit: 100)
+page = NationBuilder::Paginator.new(client, response)
 
+donations = []
+while page.next?
+  donations += page.body['results']
+  break unless Date.parse(donations.last['created_at']) >= two_days_ago
+  page = page.next
+end
+
+donations.each do |person|
+if donations['amount_in_cents'] >= 25000
+  
+    email = d['donor']['email']
+  first_name = d['donor']['first_name'].capitalize
+  name = "#{d['donor']['first_name']} #{d['donor']['last_name']}"
+  amount = d['amount']
+  person_id = d['donor']['id']
+
+  
+    puts "#{email} #{first_name} #{last_name} #{id}"
+
+
+=begin
 response = client.call(:people, :index, limit: 3)
 
 page = NationBuilder::Paginator.new(client, response)
@@ -35,6 +60,7 @@ people.each do |person|
     client.call(:people, :tag_person , params3)
 
 end
+=end
 
 =begin
  params = {
