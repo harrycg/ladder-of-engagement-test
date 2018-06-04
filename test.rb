@@ -50,7 +50,7 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
     puts "#{email} #{first_name} #{last_name} #{id}"
 
 
-  =begin
+=begin
  params = {
  id: "#{id}",
   tagging: {
@@ -58,6 +58,8 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
   }
   
 }
+  client.call(:people, :bulk_tag_removal , params)
+
 =end
   
   params2 = {
@@ -68,7 +70,6 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
   
 }
   
-  client.call(:people, :bulk_tag_removal , params)
   client.call(:people, :add , params2)
 
 else
