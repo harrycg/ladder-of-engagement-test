@@ -32,10 +32,11 @@ end
 =end
 
 filter = {
-  tag: "is:%20community%202018"  
+  limit: 100;
+  tag: "is:%20community%202018"  ;
 }
 
-response = client.call(:people, :index, filter, limit: 100)
+response = client.call(:people, :index, filter)
 
 paginated = NationBuilder::Paginator.new(client, response)
 
