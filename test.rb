@@ -15,7 +15,7 @@ while page.next?
   break unless Date.parse(donations.last['created_at']) >= two_days_ago
   page = page.next
 end
-if donations['amount_in_cents'] >= 25000
+
 
 donations.each do |person|
   
@@ -29,8 +29,11 @@ donations.each do |person|
     puts "#{email} #{first_name} #{last_name} #{id}"
 
 end 
-end
 =begin
+
+if donations['amount_in_cents'] >= 25000
+end
+
 response = client.call(:people, :index, limit: 3)
 
 page = NationBuilder::Paginator.new(client, response)
