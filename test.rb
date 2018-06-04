@@ -30,8 +30,12 @@ people.each do |person|
 
 end
 =end
-response = client.call(:people, :index, limit: 100)
 
+filter = {
+  tag: "is:%20community%202018"  
+}
+
+response = client.call(:people, :index, filter, limit: 100)
 
 paginated = NationBuilder::Paginator.new(client, response)
 
