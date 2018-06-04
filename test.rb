@@ -5,7 +5,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
   puts "Loading donations..."
 
 
-response = client.call(:people, :index)
+response = client.call(:people, :index, limit: 100)
 
 page = NationBuilder::Paginator.new(client, response)
 
