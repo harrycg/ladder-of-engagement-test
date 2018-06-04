@@ -18,9 +18,9 @@ while page.next?
 end
 =end
 
-if donations['amount_to_cents'].to_i > 20000
   
 donations.each do |d|
+if d['amount_to_cents'].to_i > 20000
   
     email = d['donor']['email']
   first_name = d['donor']['first_name']
