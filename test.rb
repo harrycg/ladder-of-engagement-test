@@ -11,7 +11,7 @@ page = NationBuilder::Paginator.new(client, response)
 
 people = []
 while page.next?
-  people= page.body['results']
+  people += page.body['results']
   page = page.next
 end  
 
