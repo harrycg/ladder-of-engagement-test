@@ -78,7 +78,24 @@ if person['tags'].include? 'is: awesome core 2018'
   client.call(:people, :tag_person , params2)
 end
 else
-  puts "almost there"
+people.each do |person|
+  
+  email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+  
+    puts "#{email} #{first_name} #{last_name} #{id}"
+
+  params3 = {
+ id: "#{id}",
+  tagging: {
+    tag: "yep"
+  }
+  
+}
+    client.call(:people, :tag_person , params3)
+
 end
 
   
