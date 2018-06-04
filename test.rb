@@ -20,7 +20,7 @@ end
 
   
 donations.each do |d|
-if d['amount_to_cents'].to_i > 20000
+if d['amount_to_cents'].to_i > 2000
   
     email = d['donor']['email']
   first_name = d['donor']['first_name']
@@ -32,7 +32,12 @@ if d['amount_to_cents'].to_i > 20000
     puts "#{email} donated #{amount}"
 
 else
-  puts "cheap ass"
+  email = d['donor']['email']
+  first_name = d['donor']['first_name']
+ last_name = d['donor']['last_name']
+  amount = d['amount']
+  person_id = d['donor']['id']
+  puts "#{email} LESS THAN 20"
 end
 end
 =begin
