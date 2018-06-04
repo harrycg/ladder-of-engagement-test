@@ -37,7 +37,7 @@ else
  last_name = d['donor']['last_name']
   amount = d['amount']
   person_id = d['donor']['id']
-  puts "#{email} LESS THAN 20"
+  puts "#{email} LESS THAN 20. the donated #{amount}"
 end
 end
 =begin
