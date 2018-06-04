@@ -39,8 +39,8 @@ paginated = NationBuilder::Paginator.new(client, response)
 
  
 people.each do |person|
-if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
-
+if person['tags'].include? 'is: community 2018'
+if person['tags'].include? 'is: awesome core 2018' 
   
   email = person['email']
     first_name = person['first_name']
@@ -72,7 +72,7 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
   
   
   client.call(:people, :tag_person , params2)
-
+end
 else
   puts "almost there"
 end
