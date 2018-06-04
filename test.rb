@@ -17,7 +17,7 @@ while page.next?
 end
 
 
-donations.each do |person|
+donations.each do |d|
   
     email = d['donor']['email']
   first_name = d['donor']['first_name'].capitalize
