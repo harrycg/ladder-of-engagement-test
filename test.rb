@@ -32,8 +32,7 @@ end
 =end
 
 filter = {
-  limit: 100;
-  tag: "is:%20community%202018"  ;
+  tag: "is:%20community%202018"  
 }
 
 response = client.call(:people, :index, filter)
