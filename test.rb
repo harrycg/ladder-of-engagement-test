@@ -66,7 +66,6 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
     tag: "test"
   }
   
-}
   
   client.call(:people, :add , params2)
 
