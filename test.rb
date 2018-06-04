@@ -4,12 +4,43 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
   puts "Loading donations..."
 
+
+response = client.call(:people, :index)
+
+page = NationBuilder::Paginator.new(client, response)
+
+people = []
+while page.next?
+  people= page.body['results']
+  page = page.next
+end
+
+people.each do |person|
+  email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+  
+    puts "#{email} #{first_name} #{last_name} #{id}"
+
+
+  params3 = {
+ id: "#{id}",
+  tagging: {
+    tag: "another"
+  }
+  
+}
+    client.call(:people, :tag_person , params3)
+
+end
+
 =begin
  params = {
   tag: "is:%20awesome%20core%202018"
     
 }
-
+response = client.call(:people_tags, :people, filter)
 response = client.call(:people_tags, :people, params)
 paginated = NationBuilder::Paginator.new(client, response)
 page1 = paginated
@@ -31,36 +62,6 @@ people.each do |person|
 end
 =end
 
-filter = {
-  tag: "is:%20awesome%20core%202018"
-    
-}
-
-response = client.call(:people_tags, :people, filter)
-
-page = NationBuilder::Paginator.new(client, response)
-
-  people= page.body['results']
- 
-people.each do |person|
-  email = person['email']
-    first_name = person['first_name']
-    last_name = person['last_name']
-  id = person['id']
-  
-    puts "#{email} #{first_name} #{last_name} #{id}"
-
-
-  params3 = {
- id: "#{id}",
-  tagging: {
-    tag: "success"
-  }
-  
-}
-    client.call(:people, :tag_person , params3)
-
-end
 =begin
 response = client.call(:people, :index)
 
