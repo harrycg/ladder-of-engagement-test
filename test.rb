@@ -31,19 +31,17 @@ people.each do |person|
 end
 =end
 
-filter = {
-  tag: "is:%20community%202018"  
-}
 
-response = client.call(:people, :index, filter)
+response = client.call(:people, :index)
 
 page = NationBuilder::Paginator.new(client, response)
 
 people = []
 while page.next?
-  people += page.body['results']
+  people= page.body['results']
   page = page.next
 end
+
 
  
 people.each do |person|
