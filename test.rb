@@ -1,3 +1,10 @@
+https://slack.com/api/chat.postMessage
+Content-type: application/json
+Authorization: Bearer ENV['SLACK_APIKEY']
+{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."
+
+  
+=begin
 require 'nationbuilder'
 
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
@@ -10,13 +17,12 @@ response = client.call(:donations, :index, limit: 100)
 page = NationBuilder::Paginator.new(client, response)
 
 donations = page.body['results']
-=begin
+
 while page.next?
   donations += page.body['results']
   break unless Date.parse(donations.last['created_at']) >= two_days_ago
   page = page.next
 end
-=end
 
   
 donations.each do |d|
@@ -40,6 +46,10 @@ else
   puts "#{email} LESS THAN 20. the donated #{amount}"
 end
 end
+=end
+
+
+
 =begin
 
 if donations['amount_in_cents'] >= 25000
