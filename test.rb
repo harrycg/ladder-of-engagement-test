@@ -18,6 +18,10 @@ while page.next?
 end
 =end
 
+if person['tags'].include? 'is: community 2018'
+
+if donations['amount_in_cents'] > 25000
+  
 donations.each do |d|
   
     email = d['donor']['email']
@@ -30,6 +34,9 @@ donations.each do |d|
     puts "#{email} donated #{amount}"
 
 end 
+else
+  puts "cheap ass"
+end
 =begin
 
 if donations['amount_in_cents'] >= 25000
