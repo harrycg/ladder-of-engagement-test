@@ -15,9 +15,9 @@ while page.next?
   break unless Date.parse(donations.last['created_at']) >= two_days_ago
   page = page.next
 end
+if donations['amount_in_cents'] >= 25000
 
 donations.each do |person|
-if donations['amount_in_cents'] >= 25000
   
     email = d['donor']['email']
   first_name = d['donor']['first_name'].capitalize
@@ -28,7 +28,8 @@ if donations['amount_in_cents'] >= 25000
   
     puts "#{email} #{first_name} #{last_name} #{id}"
 
-
+end 
+end
 =begin
 response = client.call(:people, :index, limit: 3)
 
