@@ -31,7 +31,37 @@ people.each do |person|
 end
 =end
 
+filter = {
+  tag: "is:%20awesome%20core%202018"
+    
+}
 
+response = client.call(:people_tags, :people, filter)
+
+page = NationBuilder::Paginator.new(client, response)
+
+  people= page.body['results']
+ 
+people.each do |person|
+  email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+  
+    puts "#{email} #{first_name} #{last_name} #{id}"
+
+
+  params3 = {
+ id: "#{id}",
+  tagging: {
+    tag: "success"
+  }
+  
+}
+    client.call(:people, :tag_person , params3)
+
+end
+=begin
 response = client.call(:people, :index)
 
 page = NationBuilder::Paginator.new(client, response)
@@ -67,7 +97,8 @@ if person['tags'].include? 'is: awesome core 2018'
   client.call(:people, :bulk_tag_removal , params)
 
 =end
-  
+
+=begin
   params2 = {
  id: "#{id}",
   tagging: {
@@ -100,3 +131,4 @@ people.each do |person|
 end
 end
 end
+=end
