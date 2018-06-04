@@ -59,7 +59,16 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
   
 }
 
+  params2 = {
+ id: "#{id}",
+  tagging: {
+    tag: "test"
+  }
+  
+}
+  
   client.call(:people, :bulk_tag_removal , params)
+  client.call(:people, :add , params2)
 
 else
   puts "almost there"
