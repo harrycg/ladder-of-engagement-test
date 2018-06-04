@@ -95,3 +95,6 @@ people.each do |person|
   
 }
     client.call(:people, :tag_person , params3)
+end
+end
+end
