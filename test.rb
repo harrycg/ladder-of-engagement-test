@@ -63,8 +63,6 @@ if person['tags'].include? 'is: awesome core 2018' && 'is: community 2018'
 =end
   
   params2 = {
- id: "#{id}",
-  tagging: {
     tag: "test"
   }
   
