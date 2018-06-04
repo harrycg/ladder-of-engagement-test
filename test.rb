@@ -27,7 +27,7 @@ donations.each do |d|
   person_id = d['donor']['id']
 
   
-    puts "#{first_name} #{last_name} donated #{amount}"
+    puts "#{email} donated #{amount}"
 
 end 
 =begin
