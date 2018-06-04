@@ -31,9 +31,9 @@ if d['amount_to_cents'].to_i > 20000
   
     puts "#{email} donated #{amount}"
 
-end 
 else
   puts "cheap ass"
+end
 end
 =begin
 
