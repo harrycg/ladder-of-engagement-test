@@ -20,7 +20,7 @@ end
 
   
 donations.each do |d|
-if d['amount_in_cents'] > 2000
+if d['amount_in_cents'] > 20000
   
     email = d['donor']['email']
   first_name = d['donor']['first_name']
