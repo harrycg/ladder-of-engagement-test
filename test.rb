@@ -16,8 +16,9 @@ people = page.body['results']
 
 people = []
 while page.next?
-  page = page.next
   people += page.body['results']
+  page = page.next
+
 end  
 
 
