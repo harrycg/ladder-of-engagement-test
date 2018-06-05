@@ -12,15 +12,14 @@ response = client.call(:people_tags, :people, filter)
 
 page = NationBuilder::Paginator.new(client, response)
 
+people = page.body['results']
 
 people = []
 while page.next?
-  people += page.body['results']
   page = page.next
+  people += page.body['results']
  
 end  
- people += page.body['results']
- 
 
 people.each do |person|
   email = person['email']
