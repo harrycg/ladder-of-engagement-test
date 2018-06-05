@@ -5,7 +5,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 puts "Loading people with tag is: awesome core q2 2018"
 
 filter = {
-  tag: "another"
+  tag: "is:%20awesome%20core%202018"
   }
   
 response = client.call(:people_tags, :people, filter)
