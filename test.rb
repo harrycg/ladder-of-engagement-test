@@ -1,4 +1,17 @@
 require 'net/http'
+    require 'json'
+
+uri = URI('https://slack.com/api/chat.postMessage')
+        http = Net::HTTP.new(uri.host, uri.port)
+        req = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'application/json',  
+          'Authorization' => 'Bearer ENV['SLACK_APIKEY']'})
+        req.body = {"channel" => "techteam", "text" => "Hope"}.to_json
+        res = http.request(req)
+        puts "response #{res.body}"
+        puts JSON.parse(res.body)
+
+=begin
+require 'net/http'
 require 'uri'
 require 'json'
 
@@ -6,7 +19,7 @@ uri = URI.parse("https://slack.com/api/chat.postMessage")
 
 request = Net::HTTP::Post.new(uri)
 request.content_type = 'application/json'
-request["Authorization"] = 'Bearer xoxb-32348558352-376052208487-r1h5DyOV8QyYKwQZxwWFBTlj'
+request["Authorization"] = 'Bearer ENV'
 request.body= JSON.dump({
   "channel" => "techteam", 
   "text" => "Hope"
@@ -14,7 +27,8 @@ request.body= JSON.dump({
 
 
 puts "It worked, but didn't work"
-  
+
+=end
 =begin
 require 'nationbuilder'
 
