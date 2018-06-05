@@ -1,7 +1,19 @@
-https://slack.com/api/chat.postMessage
-Content-type: application/json
-Authorization: Bearer ENV['SLACK_APIKEY']
-{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}
+require 'net/http'
+
+url = 'https://hooks.slack.com/services/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'
+uri = URI.parse(url)
+
+request = Net::HTTP::Post.new(uri.path)
+request['Content-Type'] = 'application/json'
+request['Authorization'] = Bearer 'SLACK_APIKEY'
+requesr['data'] = [{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}]
+
+response = Net::HTTP.new(uri.host,uri.port) do |http|
+  http.request(request)
+end
+
+puts response
+
 
   
 =begin
