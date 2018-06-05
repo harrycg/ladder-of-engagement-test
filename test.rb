@@ -9,12 +9,20 @@ request["Content-Type"] = "application/json; charset=UTF-8"
 request["Authorization"] = "Bearer ENV['SLACK_APIKEY']"
 request.body="{channel:techteam, text:Hope}"
 
-response = Net::HTTP.new(uri.host,uri.port) do |http|
+req_options ={
+  use_ssl: uri.scheme == "https",
+  }
+
+response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
   http.request(request)
 end
 
+
+
 puts response
 
+#response.code
+#response.body
 
   
 =begin
