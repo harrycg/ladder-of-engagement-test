@@ -22,11 +22,7 @@ end
 
 
 
-puts response
-
-#response.code
-#response.body
-
+puts "It worked, but didn't work"
   
 =begin
 require 'nationbuilder'
