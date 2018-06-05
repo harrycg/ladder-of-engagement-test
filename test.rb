@@ -13,12 +13,12 @@ response = client.call(:people_tags, :people, filter)
 page = NationBuilder::Paginator.new(client, response)
 
 people = page.body['results']
-page=page.next
+page1=page.next
 
 people = []
-while page.next?
+while page1.prev?
   people += page.body['results']
-  page = page.next
+  page1 = page1.next
 end  
 
 
