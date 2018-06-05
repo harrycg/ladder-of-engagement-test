@@ -4,7 +4,7 @@ require 'net/http'
 uri = URI('https://slack.com/api/chat.postMessage')
         http = Net::HTTP.new(uri.host, uri.port)
         req = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'application/json',  
-          'Authorization' => 'Bearer ENV['SLACK_APIKEY']' })
+          'Authorization' => 'Bearer xoxb-32348558352-376052208487-xpriTUF3hIg0SZE2bfFfh1Ka' })
         req.body = {"channel" => "techteam", "text" => "Hope"}.to_json
         res = http.request(req)
         puts "response #{res.body}"
