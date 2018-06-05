@@ -17,10 +17,10 @@ people = []
 while page.next?
   people += page.body['results']
   page = page.next
-  people += page.body['results']
-
+ 
 end  
-
+ people += page.body['results']
+ 
 
 people.each do |person|
   email = person['email']
