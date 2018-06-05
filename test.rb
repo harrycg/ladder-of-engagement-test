@@ -1,3 +1,4 @@
+=begin
 require 'net/http'
     require 'json'
 
@@ -10,7 +11,6 @@ uri = URI.parse('https://slack.com/api/chat.postMessage')
         puts "response #{res.body}"
         puts JSON.parse(res.body)
 
-=begin
 require 'net/http'
 require 'uri'
 require 'json'
