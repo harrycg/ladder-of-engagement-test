@@ -1,9 +1,11 @@
 require 'net/http'
+require 'uri'
+require 'json'
 
 url = 'https://hooks.slack.com/services/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'
 uri = URI.parse(url)
 
-request = Net::HTTP::Post.new(uri.path)
+request = Net::HTTP::Post.new(uri)
 request['Content-Type'] = 'application/json'
 request['data'] = [{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}]
 
