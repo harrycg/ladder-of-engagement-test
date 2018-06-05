@@ -1,7 +1,7 @@
 require 'net/http'
     require 'json'
 
-uri = URI('https://slack.com/api/chat.postMessage')
+uri = URI.parse('https://slack.com/api/chat.postMessage')
         http = Net::HTTP.new(uri.host, uri.port)
         req = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'application/json',  
           'Authorization' => 'Bearer xoxb-32348558352-376052208487-xpriTUF3hIg0SZE2bfFfh1Ka' })
