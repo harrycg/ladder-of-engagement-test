@@ -5,8 +5,8 @@ require 'json'
 uri = URI.parse("https://slack.com/api/chat.postMessage")
 
 request = Net::HTTP::Post.new(uri)
-request.content_type = "application/json"
-request["Authorization"] = "Bearer ENV['SLACK_APIKEY']"
+request.content_type = 'application/json'
+request["Authorization"] = 'Bearer xoxb-32348558352-376052208487-r1h5DyOV8QyYKwQZxwWFBTlj'
 request.body= JSON.dump({
   "channel" => "techteam", 
   "text" => "Hope"
