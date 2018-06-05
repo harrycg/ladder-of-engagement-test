@@ -5,8 +5,7 @@ uri = URI.parse(url)
 
 request = Net::HTTP::Post.new(uri.path)
 request['Content-Type'] = 'application/json'
-request['Authorization'] = Bearer 'SLACK_APIKEY'
-requesr['data'] = [{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}]
+request['data'] = [{"channel":"techteam","text":"I hope the tour went well, Mr. Wonka."}]
 
 response = Net::HTTP.new(uri.host,uri.port) do |http|
   http.request(request)
