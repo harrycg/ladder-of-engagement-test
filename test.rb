@@ -5,7 +5,7 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 puts "Loading people with tag is: awesome core q2 2018"
 
 filter = {
-  person_id: ""
+  person_id: "2"
   }
   
 response = client.call(:contacts, :index, filter)
@@ -26,9 +26,10 @@ people.each do |person|
     first_name = person['first_name']
     last_name = person['last_name']
   id = person['id']
-
+  status=person['status']
+contactedon=person['created_at']
   
-puts "#{email}"
+puts "#{email} #{status} on #{contactedon}" 
 
 end
 
