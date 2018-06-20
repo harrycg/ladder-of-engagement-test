@@ -6,6 +6,7 @@ puts "Loading people with tag is: awesome core q2 2018"
 
 filter = {
   person_id: "2"
+  status: "no_answer"
   }
   
 response = client.call(:contacts, :index, filter)
