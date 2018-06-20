@@ -42,7 +42,16 @@ contactedon=person['created_at']
   puts "#{count}"
 puts "#{id} #{status} on #{contactedon}" 
   else
-    
+  
+    email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+  status=person['status']
+contactedon=person['created_at']
+  
+  count=person.count  
+  
 puts "DID not meet Criteria - #{id} #{status} on #{contactedon}" 
     
   end
