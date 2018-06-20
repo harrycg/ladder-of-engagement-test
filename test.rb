@@ -27,6 +27,9 @@ puts "#{people}"
 puts "#{count}"
 
 people.each do |person|
+  
+  if person['status'] = "answered"
+  
   email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
@@ -34,14 +37,12 @@ people.each do |person|
   status=person['status']
 contactedon=person['created_at']
   
-  for status="answered"
-    status_answered=person['status']
-  end
-    status_answered_count=status_answered.count
+  count=person.count  
   
-  
+  puts "#{count}"
 puts "#{email} #{status} on #{contactedon}" 
-
+end
+    
 end
 
 
