@@ -5,6 +5,46 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 puts "Loading people with tag is: awesome core q2 2018"
 
 filter = {
+  person_id: ""
+  }
+  
+response = client.call(:people_tags, :people, filter)
+
+page = NationBuilder::Paginator.new(client, response)
+
+
+people = []
+  people += page.body['results']
+while page.next?
+  page = page.next
+  people += page.body['results']
+ 
+end  
+
+people.each do |person|
+  email = person['email']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['id']
+
+  
+puts "#{email}"
+
+
+params = {
+ id: "#{id}",
+  tagging: {
+    tag: "is: community 2018"
+  }
+  
+}
+  client.call(:people, :bulk_tag_removal , params)
+
+end
+
+
+=begin
+filter = {
   tag: "is:%20awesome%20core%202018"
   }
   
@@ -26,6 +66,7 @@ people.each do |person|
     first_name = person['first_name']
     last_name = person['last_name']
   id = person['id']
+
   
 puts "#{email}"
 
@@ -40,7 +81,7 @@ params = {
   client.call(:people, :bulk_tag_removal , params)
 
 end
-
+end
 =begin
     client.call(:people, :tag_person , params3)
 
