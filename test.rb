@@ -21,6 +21,8 @@ while page.next?
  
 end  
 
+puts "#{people}"
+
 people.each do |person|
   email = person['email']
     first_name = person['first_name']
