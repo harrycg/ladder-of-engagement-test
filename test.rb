@@ -21,7 +21,10 @@ while page.next?
  
 end  
 
+count= people.count
+
 puts "#{people}"
+puts "#{count}"
 
 people.each do |person|
   email = person['email']
