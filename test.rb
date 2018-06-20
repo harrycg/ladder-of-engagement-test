@@ -8,7 +8,7 @@ filter = {
   person_id: ""
   }
   
-response = client.call(:people_tags, :people, filter)
+response = client.call(:contacts, :index, filter)
 
 page = NationBuilder::Paginator.new(client, response)
 
@@ -29,16 +29,6 @@ people.each do |person|
 
   
 puts "#{email}"
-
-
-params = {
- id: "#{id}",
-  tagging: {
-    tag: "is: community 2018"
-  }
-  
-}
-  client.call(:people, :bulk_tag_removal , params)
 
 end
 
