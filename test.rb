@@ -34,6 +34,12 @@ people.each do |person|
   status=person['status']
 contactedon=person['created_at']
   
+  for status="answered"
+    status_answered=person['status']
+  end
+    status_answered_count=status_answered.count
+  
+  
 puts "#{email} #{status} on #{contactedon}" 
 
 end
