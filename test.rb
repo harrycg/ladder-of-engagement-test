@@ -40,8 +40,12 @@ contactedon=person['created_at']
   count=person.count  
   
   puts "#{count}"
-puts "#{email} #{status} on #{contactedon}" 
-end
+puts "#{id} #{status} on #{contactedon}" 
+  else
+    
+puts "DID not meet Criteria - #{id} #{status} on #{contactedon}" 
+    
+  end
     
 end
 
