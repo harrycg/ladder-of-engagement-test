@@ -23,7 +23,7 @@ end
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 
-  puts "#{taggged_id}"
+  puts "#{tagged_id}"
 end
 puts "we got the peeps"
 
