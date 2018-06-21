@@ -2,13 +2,36 @@ require 'nationbuilder'
 
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
-puts "Loading people with tag is: awesome core q2 2018"
+puts "finding peeps"
+
+filter = {
+  tag: "another"
+  }
+  
+info = client.call(:people_tags, :people, filter)
+info_2 = NationBuilder::Paginator.new(client, info)
+
+
+tagged_people = []
+  tagged_people += info_2.body['results']
+while info_2.next?
+  info_2 = info_2.next
+  tagged_people += info_2.body['results']
+ 
+end  
+
+tagged_people.each do |tagged_person|
+  tagged_id = tagged_person['id']
+
+  puts "#{taggged_id}"
+end
+puts "we got the peeps"
 
 filter = {
   person_id: "2",
   status: "no_answer"
   }
-  
+
 response = client.call(:contacts, :index, filter)
 
 page = NationBuilder::Paginator.new(client, response)
