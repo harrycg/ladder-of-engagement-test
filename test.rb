@@ -23,13 +23,8 @@ end
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 
-end
-  puts "#{tagged_id}"
-
-puts "we got the peeps"
-
 filter = {
-  person_id: "2",
+  person_id: "#{tagged_id}",
   status: "no_answer"
   }
 
@@ -68,6 +63,10 @@ puts "#{id} #{status} on #{contactedon}"
     
     
 end
+
+end
+
+puts "we got the peeps"
 
 
 =begin
