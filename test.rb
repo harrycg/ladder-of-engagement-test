@@ -23,8 +23,9 @@ end
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 
-  puts "#{tagged_id}"
 end
+  puts "#{tagged_id}"
+
 puts "we got the peeps"
 
 filter = {
