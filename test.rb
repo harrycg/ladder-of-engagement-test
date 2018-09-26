@@ -23,7 +23,7 @@ end
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 created_at= DateTime.now
-  puts "DateTime.now"
+  puts "#{created_at}"
   
 filter = {
   person_id: "#{tagged_id}",
@@ -34,7 +34,6 @@ response = client.call(:contacts, :index, filter)
 
 page = NationBuilder::Paginator.new(client, response)
 
-  break unless Date.parse(donations.last['created_at']) >= two_days_ago
 
 people = []
   people += page.body['results']
