@@ -55,10 +55,12 @@ people.each do |person|
   id = person['id']
   status=person['status']
 contactedon=person['created_at']
-puts "#{id} #{status} on #{contactedon}" 
+puts "#{first_name} #{id} #{status} on #{contactedon}" 
   
   else  
-  puts "too late"
+ 
+puts "too late #{first_name} #{id} #{status} on #{contactedon}" 
+
   end
     
 end
