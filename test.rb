@@ -22,6 +22,7 @@ end
 
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
+yesterday_1 =  DateTime.now - 1
 
   
   
