@@ -22,7 +22,7 @@ end
 
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
-yesterday_1= DateTime.now - 1
+ DateTime.now - 1 >= yesterday_1 >= DateTime.now
   puts "yesterday_1 was #{yesterday_1}"
   now= DateTime.now
   puts "#{now}"
@@ -31,6 +31,7 @@ yesterday_1= DateTime.now - 1
 filter = {
   person_id: "#{tagged_id}",
   status: "no_answer"
+  created_at: "#{yesterday_1}",
   }
 
 response = client.call(:contacts, :index, filter)
