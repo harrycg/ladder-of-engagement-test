@@ -52,13 +52,16 @@ people.each do |person|
   email = person['email']
     first_name = person['first_name']
     last_name = person['last_name']
-  id = person['id']
+  id = person['person_id']
   status=person['status']
 contactedon=person['created_at']
 puts "#{first_name} #{id} #{status} on #{contactedon}" 
   
   else  
- 
+  id = person['person_id']
+ contactedon=person['created_at']
+  status=person['status']
+
 puts "too late #{first_name} #{id} #{status} on #{contactedon}" 
 
   end
