@@ -40,7 +40,7 @@ people = []
 
  while page.next?
   page = page.next
-  break unless Date.parse(donations.last['created_at']) >= yesterday_1
+  break unless Date.parse(people.last['created_at']) >= yesterday_1
   people += page.body['results']
  
  
