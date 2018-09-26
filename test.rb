@@ -22,10 +22,7 @@ end
 
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
-yesterday_1 =  DateTime.now - 1
-  puts "yesterday_1 was #{yesterday_1}"
-  now= DateTime.now
-  puts "#{now}"
+
   
   
 filter = {
@@ -71,6 +68,10 @@ puts "we got the peeps"
 
 
 =begin
+yesterday_1 =  DateTime.now - 1
+  puts "yesterday_1 was #{yesterday_1}"
+  now= DateTime.now
+  puts "#{now}"
 puts "#{people}"
 puts "#{count}"
 
