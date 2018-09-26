@@ -22,7 +22,7 @@ end
 
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
-created_at= DateTime.now
+created_at= DateTime.now - 1
   puts "#{created_at}"
   
 filter = {
