@@ -57,6 +57,17 @@ people.each do |person|
 contactedon=person['created_at']
 puts "#{first_name} #{id} #{status} on #{contactedon}" 
   
+    
+    params = {
+ id: "#{id}",
+  tagging: {
+    tag: "ONBOARDING STEP 1"
+  }
+  
+}
+
+    client.call(:people, :tag_person , params)
+    
   else  
   id = person['person_id']
  contactedon=person['created_at']
