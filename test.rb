@@ -49,7 +49,7 @@ people = []
 end  
 
 people.each do |person|
-  if person['created_at'] >= yesterday_1  
+  if Date.parse(person['created_at']) >= yesterday_1  
   
   email = person['email']
     first_name = person['first_name']
