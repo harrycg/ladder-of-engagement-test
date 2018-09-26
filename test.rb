@@ -22,7 +22,7 @@ end
 
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
- DateTime.now - 1 >= yesterday_1 >= DateTime.now
+yesterday_1 =  DateTime.now - 1
   puts "yesterday_1 was #{yesterday_1}"
   now= DateTime.now
   puts "#{now}"
@@ -31,30 +31,25 @@ tagged_people.each do |tagged_person|
 filter = {
   person_id: "#{tagged_id}",
   status: "no_answer"
-  created_at: "#{yesterday_1}",
   }
 
 response = client.call(:contacts, :index, filter)
 
 page = NationBuilder::Paginator.new(client, response)
 
-
 people = []
   people += page.body['results']
-while page.next?
+
+ while page.next?
   page = page.next
+  break unless Date.parse(donations.last['created_at']) >= yesterday_1
   people += page.body['results']
+ 
  
 end  
 
-count= people.count
-
-  
-puts "#{people}"
-puts "#{count}"
-
 people.each do |person|
-  
+  if person['created_at'] >= yesterday_1  
   
   email = person['email']
     first_name = person['first_name']
@@ -62,12 +57,11 @@ people.each do |person|
   id = person['id']
   status=person['status']
 contactedon=person['created_at']
-  
-  count=person.count  
-  
-  puts "#{count}"
 puts "#{id} #{status} on #{contactedon}" 
-    
+  
+  else  
+  puts "too late"
+  end
     
 end
 
@@ -77,6 +71,12 @@ puts "we got the peeps"
 
 
 =begin
+puts "#{people}"
+puts "#{count}"
+
+count= people.count
+  count=person.count  
+
 filter = {
   tag: "is:%20awesome%20core%202018"
   }
