@@ -24,8 +24,6 @@ tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 yesterday_1= DateTime.now - 1
   puts "yesterday_1 was #{yesterday_1}"
-yesterday_24= DateTime.now - 24.hours.ago
-  puts "24 hours ago was #{yesterday_24}"
   now= DateTime.now
   puts "#{now}"
   
