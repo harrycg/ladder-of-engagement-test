@@ -86,7 +86,7 @@ puts "we got the peeps"
 puts "finding peeps step 2"
 
 filter = {
-  tag: "ONBOARDING STEP 1"
+  tag: "ONBOARDING%20STEP%201"
   }
   
 info = client.call(:people_tags, :people, filter)
