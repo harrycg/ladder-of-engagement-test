@@ -24,7 +24,8 @@ tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 yesterday_1 =  DateTime.now - 1
 
-  
+  if person['tags'].include? 'ONBOARDING STEP 1'
+
   
 filter = {
   person_id: "#{tagged_id}",
@@ -57,11 +58,11 @@ people.each do |person|
 contactedon=person['created_at']
 puts "#{first_name} #{id} #{status} on #{contactedon}" 
   
-    
+   
     params = {
  id: "#{id}",
   tagging: {
-    tag: "ONBOARDING STEP 1"
+    tag: "ONBOARDING STEP 2"
   }
   
 }
@@ -83,11 +84,10 @@ end
 
 puts "we got the peeps"
 
-puts "finding peeps step 2"
+elsif person['tags'].include? 'ONBOARDING STEP 2'
 
-filter = {
-  tag: "ONBOARDING%20STEP%201"
-  }
+else 
+
   
 info = client.call(:people_tags, :people, filter)
 info_2 = NationBuilder::Paginator.new(client, info)
@@ -142,7 +142,7 @@ puts "#{first_name} #{id} #{status} on #{contactedon}"
     params = {
  id: "#{id}",
   tagging: {
-    tag: "ONBOARDING STEP 2"
+    tag: "ONBOARDING STEP 1"
   }
   
 }
@@ -156,6 +156,7 @@ puts "#{first_name} #{id} #{status} on #{contactedon}"
 
 puts "too late #{first_name} #{id} #{status} on #{contactedon}" 
 
+  end
   end
     
 end
