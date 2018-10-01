@@ -80,34 +80,14 @@ puts "too late #{first_name} #{id} #{status} on #{contactedon}"
     
 end
 
-end
 
 puts "we got the peeps"
 
-end
 
-if person['tags'].include? 'ONBOARDING STEP 2'
-
+elsif person['tags'].include? 'ONBOARDING STEP 2'
 
 
 else 
-
-  
-info = client.call(:people_tags, :people, filter)
-info_2 = NationBuilder::Paginator.new(client, info)
-
-
-tagged_people = []
-  tagged_people += info_2.body['results']
-while info_2.next?
-  info_2 = info_2.next
-  tagged_people += info_2.body['results']
- 
-end  
-
-tagged_people.each do |tagged_person|
-  tagged_id = tagged_person['id']
-yesterday_1 =  DateTime.now - 1
 
   
   
@@ -167,7 +147,7 @@ end
 
 end
 
-puts "we got the peeps"
+puts "we got the peeps round 2"
 
 
 
