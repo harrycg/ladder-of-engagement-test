@@ -24,7 +24,7 @@ tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 yesterday_1 =  DateTime.now - 1
 
-  if person['tags'].include? 'ONBOARDING STEP 1'
+  if tagged_people['tags'].include? 'ONBOARDING STEP 1'
 
   
 filter = {
@@ -84,7 +84,7 @@ end
 puts "we got the peeps"
 
 
-elsif person['tags'].include? 'ONBOARDING STEP 2'
+elsif tagged_people['tags'].include? 'ONBOARDING STEP 2'
 
 
 else 
