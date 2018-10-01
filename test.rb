@@ -84,7 +84,11 @@ end
 
 puts "we got the peeps"
 
-elsif person['tags'].include? 'ONBOARDING STEP 2'
+end
+
+if person['tags'].include? 'ONBOARDING STEP 2'
+
+
 
 else 
 
