@@ -81,6 +81,9 @@ puts "too late #{first_name} #{id} #{status} on #{contactedon}"
     
 end
 
+end
+
+end
 
 puts "we got the peeps"
 
@@ -90,7 +93,10 @@ elsif tagged_people['tags'].include? 'ONBOARDING STEP 2'
 
 else 
 
-  
+  tagged_people.each do |tagged_person|
+  tagged_id = tagged_person['id']
+yesterday_1 =  DateTime.now - 1
+
   
 filter = {
   person_id: "#{tagged_id}",
@@ -146,7 +152,6 @@ puts "too late #{first_name} #{id} #{status} on #{contactedon}"
     
 end
 
-end
 
 puts "we got the peeps round 2"
 
