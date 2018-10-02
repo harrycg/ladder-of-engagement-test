@@ -51,6 +51,7 @@ contacts_3.each do |contacts_4|
 puts "#{id}" 
   
     count= contacts_4.count
+  puts "#{count}"
 end
 
 end
