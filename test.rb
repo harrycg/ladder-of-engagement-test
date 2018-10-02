@@ -47,6 +47,15 @@ end
    count1= contacts_3.count
   puts "#{count1} No Answers"
   
+  filter_all_3 = {
+  id: "#{tagged_id_all}",
+  no_answer_no: "#{count1}",
+
+  }
+     
+  info = client.call(:people, :update, filter_all_3)
+
+  
 contacts_3.each do |contacts_4|
   
   email = contacts_4['email']
