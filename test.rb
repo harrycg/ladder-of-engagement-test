@@ -20,11 +20,12 @@ while info_2.next?
  
 end  
 
+if tagged_people['tags'].include? 'ONBOARDING%20STEP%201'
+
 tagged_people.each do |tagged_person|
   tagged_id = tagged_person['id']
 yesterday_1 =  DateTime.now - 1
 
-  if tagged_people['tags'].include? 'ONBOARDING%20STEP%201'
 
   
 filter = {
