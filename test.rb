@@ -27,6 +27,8 @@ all_contacts_people.each do |all_contacts_people|
   
 filter_all_2 = {
   person_id: "#{tagged_id_all}",
+    status: "no_answer",
+
   }
 
 contacts_1 = client.call(:contacts, :index, filter_all_2)
@@ -42,7 +44,9 @@ contacts_3 = []
 
 end  
 
-
+   count1= contacts_3.count
+  puts "#{count1} No Answers"
+  
 contacts_3.each do |contacts_4|
   
   email = contacts_4['email']
@@ -50,12 +54,31 @@ contacts_3.each do |contacts_4|
   id = contacts_4['person_id']
  
 puts "#{id}" 
-  
-        count1= contacts_4.count
-  puts "#{count1}"
 
 end
 
+filter_answer = {
+  person_id: "#{tagged_id_all}",
+    status: "answer",
+
+  }
+
+contacts_5 = client.call(:contacts, :index, filter_answer)
+  contacts_6 = NationBuilder::Paginator.new(client, contacts_5)
+
+  
+contacts_7 = []
+  contacts_7 += contacts_6.body['results']
+
+ while contacts_6.next?
+  contacts_6 = contacts_6.next
+  contacts_7 += contacts_6.body['results']
+
+end  
+
+   count7= contacts_7.count
+  puts "#{count7}"
+  
 end
 
 filter = {
