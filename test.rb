@@ -54,8 +54,7 @@ contacts_3.each do |contacts_4|
 puts "#{id}" 
   
 end
-  count= contacts_4.count
-  puts "#{count}"
+
 end
 
 filter = {
