@@ -53,7 +53,7 @@ end
 
   }
      
-  info = client.call(:people, :update, filter_all_3)
+client.call(:people, :update, filter_all_3)
 
   
 contacts_3.each do |contacts_4|
