@@ -1,8 +1,59 @@
+
+
 require 'nationbuilder'
 
 client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
 puts "finding peeps step 1"
+
+filter_all = {
+  tag: "another"
+  }
+  
+all_contacts = client.call(:people_tags, :people, filter_all)
+all_contacts_2 = NationBuilder::Paginator.new(client, all_contacts)
+
+
+all_contacts_people = []
+  all_contacts_people += all_contacts_2.body['results']
+while all_contacts_2.next?
+  all_contacts_2 = all_contacts_2.next
+  all_contacts_people += all_contacts_2.body['results']
+ 
+end  
+
+all_contacts_people.each do |all_contacts_people|
+  tagged_id_all = all_contacts_people['id']
+  
+filter_all_2 = {
+  person_id: "#{tagged_id_all}",
+  }
+
+contacts_1 = client.call(:contacts, :index, filter_all_2)
+  contacts_2 = NationBuilder::Paginator.new(client, contacts_1)
+
+  
+contacts_3 = []
+  contacts_3 += contacts_2.body['results']
+
+ while contacts_2.next?
+  contacts_2 = contacts_2.next
+  contacts_3 += contacts_2.body['results']
+
+end  
+
+contacts_3.each do |contacts_4|
+  
+  email = contacts_4['email']
+    
+  id = contacts_4['person_id']
+ 
+puts "#{id}" 
+  
+    count= contacts_4.count
+end
+
+end
 
 filter = {
   tag: "ONBOARDING%20STEP%202"
