@@ -48,10 +48,11 @@ end
   puts "#{count1} No Answers"
   
   filter_all_3 = {
-  
-  id: "72",
-  no_answer_no: "#{count1}",
-    }
+  "person": {
+  "no_answer_no": "#{count1}",
+     "id": "72",
+  }
+}
   
   
   puts " hello#{tagged_id_all}"
