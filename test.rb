@@ -56,28 +56,6 @@ contacts_3.each do |contacts_4|
 puts "#{id}" 
 
 end
-
-filter_answer = {
-  person_id: "#{tagged_id_all}",
-    status: "answer",
-
-  }
-
-contacts_5 = client.call(:contacts, :index, filter_answer)
-  contacts_6 = NationBuilder::Paginator.new(client, contacts_5)
-
-  
-contacts_7 = []
-  contacts_7 += contacts_6.body['results']
-
- while contacts_6.next?
-  contacts_6 = contacts_6.next
-  contacts_7 += contacts_6.body['results']
-
-end  
-
-   count7= contacts_7.count
-  puts "#{count7}"
   
 end
 
