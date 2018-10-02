@@ -55,6 +55,7 @@ end
   
   puts " hello#{tagged_id_all}"
      
+
     
   
 contacts_3.each do |contacts_4|
@@ -63,10 +64,13 @@ contacts_3.each do |contacts_4|
     
   id = contacts_4['person_id']
  
+  
 puts "#{id}" 
 
 end
   
+  client.call(:people, :update, filter_all_3)
+
 end
 
 filter = {
