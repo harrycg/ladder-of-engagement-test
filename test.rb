@@ -52,9 +52,10 @@ end
   no_answer_no: "#{count1}",
 
   }
+  
+  puts " hello#{tagged_id_all}"
      
-client.call(:people, :update, filter_all_3)
-
+    
   
 contacts_3.each do |contacts_4|
   
