@@ -50,7 +50,7 @@ end
   filter_all_3 = {
   "person": {
   "no_answer_no": "#{count1}",
-     "id": "72",
+     "id": 72,
   }
 }
   
@@ -64,10 +64,10 @@ contacts_3.each do |contacts_4|
   
   email = contacts_4['email']
     
-  id = contacts_4['person_id']
+  id4 = contacts_4['person_id']
  
   
-puts "#{id}" 
+puts "#{id4}" 
 
 end
   
