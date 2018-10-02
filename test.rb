@@ -50,7 +50,7 @@ end
   filter_all_3 = {
   "person": {
   "no_answer_no": "#{count1}",
-     "id": 72,
+     "id": "#{tagged_id_all}",
   }
 }
   
