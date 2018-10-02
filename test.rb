@@ -42,6 +42,9 @@ contacts_3 = []
 
 end  
 
+      count1= contacts_3.count
+  puts "#{count1}"
+
 contacts_3.each do |contacts_4|
   
   email = contacts_4['email']
@@ -50,10 +53,9 @@ contacts_3.each do |contacts_4|
  
 puts "#{id}" 
   
-    count= contacts_4.count
-  puts "#{count}"
 end
-
+  count= contacts_4.count
+  puts "#{count}"
 end
 
 filter = {
