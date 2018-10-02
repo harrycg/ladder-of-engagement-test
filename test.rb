@@ -48,11 +48,9 @@ end
   puts "#{count1} No Answers"
   
   filter_all_3 = {
-    "person": {
+  
   id: "72",
   no_answer_no: "#{count1}",
-
-  }
     }
   
   
