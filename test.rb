@@ -42,10 +42,10 @@ text_responded_3.each do |text_responded_3|
   text_responded_tagged = text_responded_3['id']
   
 contact_text_filter = {
-  person_id: "#{text_responded_tagged}",
-    "method": "text"
-  
-  sender_id: "#{text_responded_tagged}",
+  "person_id": "#{text_responded_tagged}",
+    "method": "text",
+ 
+  "sender_id": "#{text_responded_tagged}",
 author_id: "#{text_responded_tagged}",
 
   }
