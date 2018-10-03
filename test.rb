@@ -13,6 +13,7 @@ text_contact = {
   "contact": {
     "method": "text",
   "author_id": 72,
+     "sender_id": 72,
   }
   }
   
