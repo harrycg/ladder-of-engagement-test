@@ -30,7 +30,7 @@ text_responded_2 = NationBuilder::Paginator.new(client, text_responded)
 
 
 text_responded_3 = []
-  all_contacts_people += text_responded_2.body['results']
+  text_responded_3 += text_responded_2.body['results']
 while text_responded_2.next?
   text_responded_2 = text_responded_2.next
   text_responded_3 += text_responded_2.body['results']
