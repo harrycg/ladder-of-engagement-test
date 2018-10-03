@@ -8,9 +8,9 @@ puts "create text contact"
 
 text_contact = {
   "contact": {
-  "person_id": "72",
+  "person_id": 72,
     "method": "text",
-  "author_id": "72",
+  "author_id": 72,
   }
   }
   
