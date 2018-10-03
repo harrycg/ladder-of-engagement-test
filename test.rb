@@ -12,7 +12,7 @@ text_contact = {
   "author_id": "72",
   }
 
-client.call(:contacts, :index, text_contact)
+client.call(:contacts, :create, text_contact)
 
 
 puts "finding peeps step 1"
