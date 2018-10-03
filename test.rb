@@ -6,11 +6,13 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
 puts "create text contact"
 
+idde=72
+
 text_contact = {
   "contact": {
-  "person_id":72,
+  "person_id":"#{idde}",
     "method": "text",
-  "author_id":72,
+  "author_id":"#{idde}",
   }
   }
   
