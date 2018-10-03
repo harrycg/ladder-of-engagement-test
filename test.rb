@@ -21,11 +21,11 @@ client.call(:contacts, :create, text_contact)
 
 
 
-text_responded = {
+text_respond = {
   tag: "another"
   }
   
-text_responded = client.call(:people_tags, :people, text_responded)
+text_responded = client.call(:people_tags, :people, text_respond)
 text_responded_2 = NationBuilder::Paginator.new(client, text_responded)
 
 
