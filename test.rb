@@ -20,6 +20,58 @@ text_contact = {
 client.call(:contacts, :create, text_contact)
 
 
+
+text_responded = {
+  tag: "another"
+  }
+  
+text_responded = client.call(:people_tags, :people, text_responded)
+text_responded_2 = NationBuilder::Paginator.new(client, text_responded)
+
+
+text_responded_3 = []
+  all_contacts_people += text_responded_2.body['results']
+while text_responded_2.next?
+  text_responded_2 = text_responded_2.next
+  text_responded_3 += text_responded_2.body['results']
+ 
+end  
+
+
+text_responded_3.each do |text_responded_3|
+  text_responded_tagged = text_responded_3['id']
+  
+contact_text_filter = {
+  person_id: "#{text_responded_tagged}",
+    "method": "text"
+  
+  sender_id: "#{text_responded_tagged}",
+author_id: "#{text_responded_tagged}",
+
+  }
+
+texts_1 = client.call(:contacts, :index, contact_text_filter)
+  texts_2 = NationBuilder::Paginator.new(client, texts_1)
+
+  
+texts_3 = []
+  texts_3 += texts_2.body['results']
+
+ while texts_2.next?
+  texts_2 = texts_2.next
+  texts_3 += texts_2.body['results']
+
+end  
+
+   textcount1= texts_3 .count
+  puts "#{textcount1} No Answers"
+  
+
+   
+
+end
+
+
 puts "finding peeps step 1"
 
 filter_all = {
