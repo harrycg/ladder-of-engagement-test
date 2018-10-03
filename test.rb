@@ -10,9 +10,9 @@ idde=72
 
 text_contact = {
   "contact": {
-  "person_id":"#{idde}",
+  person_id:72,
     "method": "text",
-  "author_id":"#{idde}",
+  author_id:72,
   }
   }
   
