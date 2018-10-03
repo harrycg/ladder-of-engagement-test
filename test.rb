@@ -10,7 +10,6 @@ text_contact = {
   person_id: "72",
     "method": "text",
   "author_id": "72",
-"created_at":	2017-02-14T14:36:29-05:00,
   }
 
 client.call(:contacts, :index, text_contact)
