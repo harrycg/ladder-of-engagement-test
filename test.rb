@@ -27,7 +27,7 @@ all_contacts_people.each do |all_contacts_people|
   
 filter_all_2 = {
   person_id: "#{tagged_id_all}",
-    status: "no_answer",
+    "method": "text"
 
   }
 
