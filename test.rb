@@ -69,10 +69,10 @@ end
   
 donations_filtered = texts_3.select do |t|
 
-  Date.parse(t['created_at']) == this_year_2018
+  Date.parse(['created_at']) == this_year_2018
 end
 
-puts "#{t.count} filtered"
+puts "#{donations_filtered.count} filtered"
   
    textcount1= texts_3.count
   puts "#{textcount1} no filtered"
