@@ -58,7 +58,6 @@ yesterday_1 =  DateTime.now - 1
 
 
 texts_3 = []
-while texts_2.body['results']['created_at'].to_i.start_with? '2018'
   texts_3 += texts_2.body['results']
 
  while texts_2.next?
@@ -67,11 +66,16 @@ while texts_2.body['results']['created_at'].to_i.start_with? '2018'
 
 end  
 
+  
+donations_filtered = texts_3.select do |t|
+
+  Date.parse(t['created_at']) == this_year_2018
 end
 
+puts "#{t.count} filtered"
   
-   textcount1= texts_3 .count
-  puts "#{textcount1} No Answers"
+   textcount1= texts_3.count
+  puts "#{textcount1} no filtered"
   
 
    
