@@ -68,7 +68,7 @@ texts_1 = client.call(:contacts, :index, filter)
 yesterday_1 =  DateTime.now - 1
   this_year_2018 = Date.today - 285
 puts "#{this_year_2018}" 
-  jan_1= 2018-01-01
+  jan_1= Date.parse('2018-01-01')
 puts "#{jan_1} yep" 
   
 texts_3 = []
