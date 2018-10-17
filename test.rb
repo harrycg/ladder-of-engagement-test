@@ -52,7 +52,7 @@ author_id: "#{text_responded_tagged}",
   }
 
   filter = {
-  person_id: "#{tagged_id}",
+  person_id: 72,
   status: "no_answer"
   }
   
