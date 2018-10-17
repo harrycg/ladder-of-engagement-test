@@ -127,7 +127,7 @@ puts "#{text_responded_tagged} #{donations_filtered123.count} filtered"
   puts " #{text_responded_tagged} #{textcountz} no filtered"
   
 totalanswer= textcount1+textcountz
-   
+   puts "#{totalanswer}"
 
 
 end
