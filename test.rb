@@ -97,7 +97,7 @@ puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
 
   filter2 = {
   person_id: "#{text_responded_tagged}",
-  status: "answer"
+  status: "answered"
   }
   
 texts_x = client.call(:contacts, :index, filter2)
