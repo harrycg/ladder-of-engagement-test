@@ -69,7 +69,7 @@ yesterday_1 =  DateTime.now - 1
   this_year_2018 = Date.today - 285
 puts "#{this_year_2018}" 
   jan_1= 2018-01-01
-puts "#{jan_1}" 
+puts "#{jan_1} yep" 
   
 texts_3 = []
   texts_3 += texts_2.body['results']
