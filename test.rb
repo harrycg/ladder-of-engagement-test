@@ -11,15 +11,17 @@ idde=72
 text_contact = {
   "person_id": 72,
   "contact": {
-    "method": "text",
-  "author_id": 72,
-     "sender_id": 72,
+    "method": "phone_call",
+  "author_id": 2,
+       "created_at": "2017-12-14T14:36:29-05:00",
+    "status": "no_answer",
   }
   }
   
-=begin
+
 client.call(:contacts, :create, text_contact)
-=end
+=begin
+
 
 
 text_respond = {
@@ -52,7 +54,8 @@ author_id: "#{text_responded_tagged}",
 
   }
 =end
-  
+
+=begin
   filter = {
   person_id: "#{text_responded_tagged}",
   status: "no_answer"
@@ -89,7 +92,7 @@ puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
    
 
 end
-
+=end
 =begin
 puts "finding peeps step 1"
 
