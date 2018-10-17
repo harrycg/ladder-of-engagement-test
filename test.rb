@@ -53,8 +53,10 @@ author_id: "#{text_responded_tagged}",
 texts_1 = client.call(:contacts, :index, contact_text_filter)
   texts_2 = NationBuilder::Paginator.new(client, texts_1)
 
+yesterday_1 =  DateTime.now - 1
   
 texts_3 = []
+while Date.parse(text_2.last['created_at']) >= yesterday_1 
   texts_3 += texts_2.body['results']
 
  while texts_2.next?
@@ -63,6 +65,9 @@ texts_3 = []
 
 end  
 
+end
+
+  
    textcount1= texts_3 .count
   puts "#{textcount1} No Answers"
   
