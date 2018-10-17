@@ -57,7 +57,7 @@ yesterday_1 =  DateTime.now - 1
 
 
 texts_3 = []
-while Date.parse(texts_2.body['results']['created_at']) >= yesterday_1 
+while texts_2.body['results']['created_at'] >= yesterday_1 
   texts_3 += texts_2.body['results']
 
  while texts_2.next?
