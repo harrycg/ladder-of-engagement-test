@@ -13,6 +13,7 @@ text_contact = {
   "contact": {
     "method": "phone_call",
   "author_id": 2,
+     "sender_id": 2,
        "created_at": "2017-12-14T14:36:29-05:00",
     "status": "no_answer",
   }
