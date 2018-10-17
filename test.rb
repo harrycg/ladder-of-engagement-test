@@ -21,7 +21,7 @@ text_contact = {
   
 =begin
 client.call(:contacts, :create, text_contact)
-
+=end
 
 
 
