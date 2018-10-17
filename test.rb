@@ -100,6 +100,38 @@ puts "#{text_responded_tagged} #{donations_filtered2.count} filtered"
   puts " #{text_responded_tagged} #{textcount1} no filtered"
   
 
+  filter2 = {
+  person_id: "#{text_responded_tagged}",
+  status: "answer"
+  }
+  
+texts_x = client.call(:contacts, :index, filter2)
+  texts_y = NationBuilder::Paginator.new(client, texts_1)
+  
+texts_z = []
+  texts_z += texts_y.body['results']
+
+ while texts_y.next?
+  texts_y = texts_y.next
+  texts_z += texts_y.body['results']
+
+end  
+
+  
+donations_filtered123 = texts_z.select do |xyz|
+
+  Date.parse(xyz['created_at']) >= jan_1
+end
+
+puts "#{text_responded_tagged} #{donations_filtered123.count} filtered"
+
+
+   textcountz= texts_z.count
+
+
+  puts " #{text_responded_tagged} #{textcountz} no filtered"
+  
+totalanswer= textcount1+textcountz
    
 
 end
