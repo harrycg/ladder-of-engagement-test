@@ -106,7 +106,7 @@ puts "#{text_responded_tagged} #{donations_filtered2.count} filtered"
   }
   
 texts_x = client.call(:contacts, :index, filter2)
-  texts_y = NationBuilder::Paginator.new(client, texts_1)
+  texts_y = NationBuilder::Paginator.new(client, texts_x)
   
 texts_z = []
   texts_z += texts_y.body['results']
