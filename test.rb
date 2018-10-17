@@ -42,6 +42,7 @@ end
 text_responded_3.each do |text_responded_3|
   text_responded_tagged = text_responded_3['id']
   
+=begin
 contact_text_filter = {
   "person_id": "#{text_responded_tagged}",
     "method": "text",
@@ -50,9 +51,10 @@ contact_text_filter = {
 author_id: "#{text_responded_tagged}",
 
   }
-
+=end
+  
   filter = {
-  person_id: 72,
+  person_id: "#{text_responded_tagged}",
   status: "no_answer"
   }
   
@@ -75,13 +77,13 @@ end
   
 donations_filtered = texts_3.select do |t|
 
-  Date.parse(t['created_at']) == this_year_2018
+  Date.parse(t['created_at']) >= this_year_2018
 end
 
-puts "#{donations_filtered.count} filtered"
+puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
   
    textcount1= texts_3.count
-  puts "#{textcount1} no filtered"
+  puts " #{text_responded_tagged} #{textcount1} no filtered"
   
 
    
