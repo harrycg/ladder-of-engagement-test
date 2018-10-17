@@ -54,10 +54,11 @@ texts_1 = client.call(:contacts, :index, contact_text_filter)
   texts_2 = NationBuilder::Paginator.new(client, texts_1)
 
 yesterday_1 =  DateTime.now - 1
+  this_year_2018 = Date.today - 1
 
 
 texts_3 = []
-if texts_2.body['results']['created_at'] >= yesterday_1 
+while Date.parse(texts_2.body['results']['created_at']) >= this_year_2018
   texts_3 += texts_2.body['results']
 
  while texts_2.next?
