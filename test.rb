@@ -68,6 +68,7 @@ texts_1 = client.call(:contacts, :index, filter)
 yesterday_1 =  DateTime.now - 1
   this_year_2018 = Date.today - 285
 puts "#{this_year_2018}" 
+  jan_1= 2018-01-01
 
 texts_3 = []
   texts_3 += texts_2.body['results']
@@ -81,7 +82,7 @@ end
   
 donations_filtered = texts_3.select do |t|
 
-  Date.parse(t['created_at']) >= this_year_2018
+  Date.parse(t['created_at']) >= jan_1
 end
 
 puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
