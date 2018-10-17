@@ -17,8 +17,9 @@ text_contact = {
   }
   }
   
+=begin
 client.call(:contacts, :create, text_contact)
-
+=end
 
 
 text_respond = {
@@ -50,7 +51,12 @@ author_id: "#{text_responded_tagged}",
 
   }
 
-texts_1 = client.call(:contacts, :index, contact_text_filter)
+  filter = {
+  person_id: "#{tagged_id}",
+  status: "no_answer"
+  }
+  
+texts_1 = client.call(:contacts, :index, filter)
   texts_2 = NationBuilder::Paginator.new(client, texts_1)
 
 yesterday_1 =  DateTime.now - 1
@@ -82,7 +88,7 @@ puts "#{donations_filtered.count} filtered"
 
 end
 
-
+=begin
 puts "finding peeps step 1"
 
 filter_all = {
