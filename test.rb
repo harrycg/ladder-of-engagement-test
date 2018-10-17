@@ -69,7 +69,8 @@ yesterday_1 =  DateTime.now - 1
   this_year_2018 = Date.today - 285
 puts "#{this_year_2018}" 
   jan_1= 2018-01-01
-
+puts "#{jan_1}" 
+  
 texts_3 = []
   texts_3 += texts_2.body['results']
 
@@ -87,6 +88,14 @@ end
 
 puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
   
+
+donations_filtered2 = texts_3.select do |text|
+
+  Date.parse(text['created_at']) >= this_year_2018
+end
+puts "#{text_responded_tagged} #{donations_filtered2.count} filtered"
+
+
    textcount1= texts_3.count
   puts " #{text_responded_tagged} #{textcount1} no filtered"
   
