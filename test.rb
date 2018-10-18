@@ -67,7 +67,7 @@ author_id: "#{text_responded_tagged}",
 texts_1 = client.call(:contacts, :index, filter)
   texts_2 = NationBuilder::Paginator.new(client, texts_1)
 
-yesterday_1 =  DateTime.now - 200
+yesterday_1 =  DateTime.now - 1
 puts "#{yesterday_1}"
   this_year_2018 = Date.today - 285
 #puts "#{this_year_2018}" 
