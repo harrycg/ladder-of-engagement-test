@@ -67,11 +67,11 @@ texts_1 = client.call(:contacts, :index, filter)
 
 yesterday_1 =  DateTime.now - 1
   this_year_2018 = Date.today - 285
-puts "#{this_year_2018}" 
+#puts "#{this_year_2018}" 
   jan_1= Date.parse('2018-01-01')
-puts "#{jan_1} yep" 
+#puts "#{jan_1} yep" 
   
-  puts "#{texts_2}"
+ # puts "#{texts_2}"
   
 texts_3 = []
   texts_3 += texts_2.body['results']
@@ -88,12 +88,12 @@ donations_filtered = texts_3.select do |t|
   Date.parse(t['created_at']) >= jan_1
 end
 
-puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
+#puts "#{text_responded_tagged} #{donations_filtered.count} filtered"
   
 
 
    textcount1= texts_3.count
-  puts " #{text_responded_tagged} #{textcount1} no filtered"
+  #puts " #{text_responded_tagged} #{textcount1} no filtered"
   
 
 
@@ -114,19 +114,33 @@ texts_z = []
 
 end  
 
+  texts_3.each do |person|
   
+  email = person['email']
+    tags=person['tags']
+    first_name = person['first_name']
+    last_name = person['last_name']
+  id = person['person_id']
+  status=person['status']
+contactedon=person['created_at']
+puts "#{first_name} #{id} #{status} on #{contactedon}" 
+  
+   end
+    
 donations_filtered123 = texts_z.select do |xyz|
 
   Date.parse(xyz['created_at']) >= jan_1
+  
+  
 end
 
-puts "#{text_responded_tagged} #{donations_filtered123.count} filtered"
+#puts "#{text_responded_tagged} #{donations_filtered123.count} filtered"
 
 
    textcountz= texts_z.count
 
 
-  puts " #{text_responded_tagged} #{textcountz} no filtered"
+ # puts " #{text_responded_tagged} #{textcountz} no filtered"
   
 totalanswer= textcount1+textcountz
    puts "#{totalanswer}"
