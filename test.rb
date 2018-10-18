@@ -44,6 +44,9 @@ end
 
 text_responded_3.each do |text_responded_3|
   text_responded_tagged = text_responded_3['id']
+  tags=text_responded_3['tags']
+  
+  puts "#{tags}"
   
 =begin
 contact_text_filter = {
