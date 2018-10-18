@@ -71,7 +71,7 @@ puts "#{this_year_2018}"
   jan_1= Date.parse('2018-01-01')
 puts "#{jan_1} yep" 
   
-  puts "texts_2.body['results']"
+  puts "#{texts_2}"
   
 texts_3 = []
   texts_3 += texts_2.body['results']
