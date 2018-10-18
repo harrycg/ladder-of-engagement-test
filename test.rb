@@ -117,6 +117,8 @@ texts_z = []
 end  
 
   texts_3.each do |person|
+      if Date.parse(person['created_at']) >= yesterday_1  
+
 if tags.include? 'ONBOARDING STEP 3' 
   
   
@@ -147,6 +149,7 @@ params2 = {
   client.call(:people, :bulk_tag_removal , params2)
   
    end
+  end
   end
 donations_filtered123 = texts_z.select do |xyz|
 
