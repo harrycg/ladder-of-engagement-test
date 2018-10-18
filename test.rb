@@ -123,7 +123,7 @@ end
   id = person['person_id']
   status=person['status']
 contactedon=person['created_at']
-puts "#{first_name} #{id} #{status} on #{contactedon}" 
+puts "#{tags} #{id} " 
   
    end
     
@@ -143,7 +143,7 @@ end
  # puts " #{text_responded_tagged} #{textcountz} no filtered"
   
 totalanswer= textcount1+textcountz
-   puts "#{totalanswer}"
+  # puts "#{totalanswer}"
 
 
 end
