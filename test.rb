@@ -117,18 +117,27 @@ texts_z = []
 end  
 
   texts_3.each do |person|
+if tags.include? 'another' 
   
-  email = person['email']
   
-    first_name = person['first_name']
-    last_name = person['last_name']
   id = person['person_id']
   status=person['status']
 contactedon=person['created_at']
-puts "#{tags} #{id} " 
+
+  puts "#{tags} #{id} " 
   
-   end
+    params = {
+ id: "#{id}",
+  tagging: {
+    tag: "YOYOY"
+  }
+  
+}
+
+    client.call(:people, :tag_person , params)
     
+   end
+  end
 donations_filtered123 = texts_z.select do |xyz|
 
   Date.parse(xyz['created_at']) >= jan_1
