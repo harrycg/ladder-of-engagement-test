@@ -117,7 +117,7 @@ texts_z = []
 end  
 
   texts_3.each do |person|
-if tags.include? 'another' 
+if tags.include? 'ONBOARDING STEP 1' 
   
   
   id = person['person_id']
@@ -129,7 +129,7 @@ contactedon=person['created_at']
     params = {
  id: "#{id}",
   tagging: {
-    tag: "YOYOY"
+    tag: "xoxox"
   }
   
 }
