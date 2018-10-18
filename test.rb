@@ -68,6 +68,7 @@ texts_1 = client.call(:contacts, :index, filter)
   texts_2 = NationBuilder::Paginator.new(client, texts_1)
 
 yesterday_1 =  DateTime.now - 200
+puts "#{yesterday_1}"
   this_year_2018 = Date.today - 285
 #puts "#{this_year_2018}" 
   jan_1= Date.parse('2018-01-01')
