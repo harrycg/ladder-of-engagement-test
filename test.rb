@@ -59,7 +59,7 @@ author_id: "#{text_responded_tagged}",
 
   filter = {
   person_id: "#{text_responded_tagged}",
-  status: "no_answer"
+  status: "no_answer",
   }
   
 texts_1 = client.call(:contacts, :index, filter)
@@ -70,6 +70,8 @@ yesterday_1 =  DateTime.now - 1
 puts "#{this_year_2018}" 
   jan_1= Date.parse('2018-01-01')
 puts "#{jan_1} yep" 
+  
+  puts "texts_2.body['results']"
   
 texts_3 = []
   texts_3 += texts_2.body['results']
