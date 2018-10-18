@@ -117,7 +117,7 @@ texts_z = []
 end  
 
   texts_3.each do |person|
-if tags.include? 'ONBOARDING STEP 1' 
+if tags.include? 'ONBOARDING STEP 3' 
   
   
   id = person['person_id']
@@ -129,13 +129,23 @@ contactedon=person['created_at']
     params = {
  id: "#{id}",
   tagging: {
-    tag: "xoxox"
+    tag: "ONBOARDING STEP 4"
   }
   
 }
+  
 
     client.call(:people, :tag_person , params)
-    
+  
+params2 = {
+ id: "#{id}",
+  tagging: {
+    tag: "ONBOARDING STEP 3"
+  }
+  
+}
+  client.call(:people, :bulk_tag_removal , params2)
+  
    end
   end
 donations_filtered123 = texts_z.select do |xyz|
